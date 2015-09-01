@@ -1,12 +1,26 @@
-<h1>Hi {{vm.user.firstName}}!</h1>
-<p>You're logged in!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
-    </li>
-</ul>
-<p>&nbsp;</p>
-<p><a href="#/login" class="btn btn-primary">Logout</a></p>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Time<strong>Tracker</strong></a>
+        </div>
+    </div>
+</nav>
 
+<div class="jumbotron">
+    <div class="container">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+        </div>
+        <h1>Hi {{vm.user.firstName}}!</h1>
+            <p>You're logged in!!</p>
+        <!-- <h3>All registered users:</h3>
+         <ul>
+             <li ng-repeat="user in vm.allUsers">
+                 {{user.username}} ({{user.firstName}} {{user.lastName}})
+                 - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
+             </li>
+         </ul>-->
+        <p>&nbsp;</p>
+        <p><a href="#/login" class="btn btn-primary">Logout</a></p>
+    </div>
+</div>

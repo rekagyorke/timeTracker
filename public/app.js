@@ -2,18 +2,13 @@
     'use strict';
 
     angular
-        .module('app', ['ngRoute', 'ngCookies'])
+        .module('app', ['ngRoute', 'ngCookies', 'ngResource', 'ui.bootstrap'])
         .config(config)
         .run(run);
 
     config.$inject = ['$routeProvider', '$locationProvider'];
     function config($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/', {
-                controller: 'HomeController',
-                templateUrl: 'app/views/authentication/home.html',
-                controllerAs: 'vm'
-            })
 
             .when('/login', {
                 controller: 'LoginController',
@@ -24,6 +19,18 @@
             .when('/register', {
                 controller: 'RegisterController',
                 templateUrl: 'app/views/authentication/register.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/user', {
+                controller: 'projectController',
+                templateUrl: 'app/views/user.html',
+                controllerAs: 'vm'
+            })
+
+            .when('/user_tracks/:id', {
+                controller: 'TimeEntry',
+                templateUrl: 'app/views/user_tracks.html',
                 controllerAs: 'vm'
             })
 

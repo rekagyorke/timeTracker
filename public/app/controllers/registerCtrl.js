@@ -13,13 +13,17 @@
 
         function register() {
             vm.dataLoading = true;
+
             UserService.Create(vm.user)
                 .then(function (response) {
-                    if (response.success) {
+
+                    if (response.data.success) {
+
                         FlashService.Success('Registration successful', true);
                         $location.path('/login');
                     } else {
-                        FlashService.Error(response.message);
+
+                        FlashService.Error(response.data.message);
                         vm.dataLoading = false;
                     }
                 });

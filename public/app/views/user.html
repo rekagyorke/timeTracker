@@ -1,0 +1,44 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#login">Time<strong>Tracker</strong></a>
+        </div>
+        <div class="nav navbar-right">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="#/user" class="name"> Hello {{$root.globals.currentUser.username}}</a>
+                </li>
+                <li>
+                    <a href="#/login">Sign Out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div ng-repeat="projects in vm.projects" class="well vm">
+        <div class="row">
+            <div class="col-sm-8">
+            <h4><i class="fa fa-folder-open"></i><a href="#/user_tracks/{{projects._id}}" class="projectName"> {{projects.projectname}}</a></h4>
+            <i class="fa fa-calendar">  {{projects.lastUpdate | date:'mediumDate'}}</i>
+        </div>
+            <div class="col-sm-4 time-numbers">
+                <h4>
+                    <div class="well time-numbers">
+                        <h1><i class="fa fa-clock-o">Total Time</i></h1>
+                        <h1><span class="label label-primary"> {{projects.totalTime.hours}} hours</span></h1>
+                        <h3><span class="label label-default"> {{projects.totalTime.minutes}} minutes</span></h3>
+                    </div>
+                </h4>
+            </div>
+        </div>
+    </div>
+    <div class="navbar-form">
+        <form class="form">
+            <h4><i class="fa fa-pencil">  New Project</i>
+                <input ng-model="vm.project_name" placeholder="Enter a name" class="form-control">
+                <button ng-click= "vm.submitProject()" class="btn btn-primary">Submit</button>
+                <a href="#/user_tracks"></a></h4>
+        </form>
+    </div>
+</div>

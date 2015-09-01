@@ -1,0 +1,44 @@
+.time-numbers > *, .time-entry > * {
+    display: inline-block;
+}
+
+.timepicker {
+    margin-right: 15px;
+    margin-left: 25px;
+}
+
+@media (min-width: 546px) {
+    .time-entry-comment {
+        position: relative;
+        top: 58px;
+    }
+}
+.well {
+    padding: 10px;
+}
+
+.form-control {
+    font-size: 13px;
+}
+
+.edit-time-entry {
+    border-top: 1px solid #ccc;
+    background-color: #e0e0e0;
+    padding: 15px;
+    margin: 10px !important;
+}
+.projectName {
+    font-size: 30px;
+}
+
+.fa.fa-eur {
+    font-size: 30px;
+}
+.navbar-brand {
+    font-size: 30px;
+    font-family: 'Trebuchet', 'Trebuchet', 'Trebuchet';
+}
+
+.projectname {
+    font-size: 25px;
+}
